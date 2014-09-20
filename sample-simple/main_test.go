@@ -57,6 +57,7 @@ func TestSleep(t *testing.T) {
 	out := ut.NewWriter(t)
 	defer out.Close()
 	log.SetOutput(out)
+
 	ut.AssertEqual(t, 0, subcommands.Run(application, []string{"sleep", "-duration", "1"}))
 	assertStdout(t, "")
 }
